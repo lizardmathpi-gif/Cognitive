@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin | Cognitive</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    try {
+      if (localStorage.getItem("sidebarCollapsed") === "true") {
+        document.documentElement.classList.add("sidebar-collapsed");
+      }
+    } catch (error) {}
+  </script>
+  <script src="auth.js"></script>
+</head>
+<body>
+  <div class="layout">
+
+    <nav class="sidebar">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="11" fill="#2b3a52" />
+          <path d="M13 14 L24 36 L35 14" fill="none" stroke="#f4ead5" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.5 25 L24 12.5 L30.5 25" fill="none" stroke="#7fd1b0" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="24" cy="36.5" r="2.2" fill="#7fd1b0" />
+        </svg>
+        <span class="brand-name">Cognitive</span>
+      </a>
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link" href="sources.html">Sources</a>
+      <a class="nav-link" href="papers.html">Papers</a>
+      <a class="nav-link" href="settings.html">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-dasharray="3.22 3.22" />
+          <path fill="currentColor" fill-rule="evenodd" d="M12 5.2 a6.8 6.8 0 1 0 0.01 0 Z M12 9.2 a2.8 2.8 0 1 1 -0.01 0 Z" />
+        </svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <main>
+      <button class="menu-toggle" aria-label="Show or hide the sidebar" aria-expanded="true">☰</button>
+
+      <h2 class="page-heading">Admin controls</h2>
+      <p class="blurb">Test tools for this browser. Your changes apply to the account you pick below.</p>
+
+      <section class="panel admin-panel">
+        <label for="target"><strong>Account</strong></label>
+        <select id="target" class="admin-select"></select>
+        <div class="admin-stats" id="admin-stats"></div>
+      </section>
+
+      <p class="shop-message" id="admin-message" role="status"></p>
+
+      <section class="panel admin-panel">
+        <h3>Gems</h3>
+        <p class="note">Gems are the balance the shop spends.</p>
+        <div class="admin-row">
+          <input type="number" id="gem-amount" class="admin-input" value="100" min="0" step="1" aria-label="Gem amount">
+          <button type="button" class="buy" data-action="add-gems">Add</button>
+          <button type="button" class="buy secondary" data-action="remove-gems">Remove</button>
+          <button type="button" class="buy secondary" data-action="set-gems">Set balance</button>
+        </div>
+        <div class="admin-row">
+          <input type="number" id="lifetime-amount" class="admin-input" value="0" min="0" step="1" aria-label="Lifetime total">
+          <button type="button" class="buy secondary" data-action="set-lifetime">Set lifetime total</button>
+        </div>
+      </section>
+
+      <section class="panel admin-panel">
+        <h3>Rewards</h3>
+        <div class="admin-row">
+          <label for="points-per-problem">Gems per correct answer</label>
+          <input type="number" id="points-per-problem" class="admin-input" min="0" step="1">
+          <button type="button" class="buy" data-action="save-reward">Save</button>
+        </div>
+        <p class="note">This setting applies to every account on this device.</p>
+      </section>
+
+      <section class="panel admin-panel">
+        <h3>Quick actions</h3>
+        <div class="admin-actions">
+          <button type="button" class="buy secondary" data-action="unlock-all">Unlock every shop item</button>
+          <button type="button" class="buy secondary" data-action="reset-avatar">Reset avatar to defaults</button>
+          <button type="button" class="buy secondary" data-action="add-today">Mark today as active</button>
+          <button type="button" class="buy secondary" data-action="fill-week">Fill the last 7 days</button>
+          <button type="button" class="buy secondary" data-action="clear-solved">Clear solved problems</button>
+          <button type="button" class="buy secondary" data-action="clear-test-progress">Clear test lesson progress</button>
+          <button type="button" class="buy secondary danger" data-action="reset-account">Reset all data for this account</button>
+          <button type="button" class="buy secondary danger" data-action="delete-account">Delete this account</button>
+        </div>
+      </section>
+    </main>
+
+  </div>
+<script src="store.js"></script>
+<script src="admin.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

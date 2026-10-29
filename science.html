@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Science | Cognitive</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    try {
+      if (localStorage.getItem("sidebarCollapsed") === "true") {
+        document.documentElement.classList.add("sidebar-collapsed");
+      }
+    } catch (error) {}
+  </script>
+  <script src="auth.js"></script>
+</head>
+<body>
+  <div class="layout">
+
+    <nav class="sidebar">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="11" fill="#2b3a52" />
+          <path d="M13 14 L24 36 L35 14" fill="none" stroke="#f4ead5" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.5 25 L24 12.5 L30.5 25" fill="none" stroke="#7fd1b0" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="24" cy="36.5" r="2.2" fill="#7fd1b0" />
+        </svg>
+        <span class="brand-name">Cognitive</span>
+      </a>
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link" href="sources.html">Sources</a>
+      <a class="nav-link" href="papers.html">Papers</a>
+      <a class="nav-link" href="settings.html">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-dasharray="3.22 3.22" />
+          <path fill="currentColor" fill-rule="evenodd" d="M12 5.2 a6.8 6.8 0 1 0 0.01 0 Z M12 9.2 a2.8 2.8 0 1 1 -0.01 0 Z" />
+        </svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <main>
+      <button class="menu-toggle" aria-label="Show or hide the sidebar" aria-expanded="true">☰</button>
+
+      <h2 class="page-heading">Science</h2>
+
+      <input
+        type="search"
+        id="topic-search"
+        class="search"
+        placeholder="Search science topics"
+        aria-label="Search science topics">
+
+      <div class="category-grid">
+
+        <section class="category">
+          <h3>6th Grade Science</h3>
+          <ul>
+            <li>Plate Tectonics and Earth Structure</li>
+            <li>Cells and Their Functions</li>
+            <li>Energy and Heat Transfer</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>7th Grade Science</h3>
+          <ul>
+            <li>Ecosystems and Food Webs</li>
+            <li>Atoms, Elements, and the Periodic Table</li>
+            <li>Heredity and Genetics</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>8th Grade Science</h3>
+          <ul>
+            <li>Forces and Motion</li>
+            <li>Waves, Light, and Sound</li>
+            <li>Earth, Sun, and Moon Systems</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>Biology</h3>
+          <ul>
+            <li>Cells and Cellular Energy</li>
+            <li>DNA, Genes, and Protein Synthesis</li>
+            <li>Evolution and Natural Selection</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>Chemistry</h3>
+          <ul>
+            <li>Atomic Structure and Periodic Trends</li>
+            <li>Chemical Bonds and Reactions</li>
+            <li>Moles and Stoichiometry</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>Physics</h3>
+          <ul>
+            <li>Describing Motion</li>
+            <li>Forces, Work, and Energy</li>
+            <li>Electricity and Circuits</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>Earth and Environmental Science</h3>
+          <ul>
+            <li>The Water and Carbon Cycles</li>
+            <li>Climate and Climate Change</li>
+            <li>Natural Resources and Human Impact</li>
+          </ul>
+        </section>
+
+      </div>
+
+      <p id="no-results" hidden>No topics match your search.</p>
+    </main>
+
+  </div>
+<script src="courses.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

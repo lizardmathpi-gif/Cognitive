@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings | Cognitive</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    try {
+      if (localStorage.getItem("sidebarCollapsed") === "true") {
+        document.documentElement.classList.add("sidebar-collapsed");
+      }
+    } catch (error) {}
+  </script>
+  <script src="auth.js"></script>
+</head>
+<body>
+  <div class="layout">
+
+    <nav class="sidebar">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="11" fill="#2b3a52" />
+          <path d="M13 14 L24 36 L35 14" fill="none" stroke="#f4ead5" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.5 25 L24 12.5 L30.5 25" fill="none" stroke="#7fd1b0" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="24" cy="36.5" r="2.2" fill="#7fd1b0" />
+        </svg>
+        <span class="brand-name">Cognitive</span>
+      </a>
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link" href="sources.html">Sources</a>
+      <a class="nav-link" href="papers.html">Papers</a>
+      <a class="nav-link active" href="settings.html">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-dasharray="3.22 3.22" />
+          <path fill="currentColor" fill-rule="evenodd" d="M12 5.2 a6.8 6.8 0 1 0 0.01 0 Z M12 9.2 a2.8 2.8 0 1 1 -0.01 0 Z" />
+        </svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <main>
+      <button class="menu-toggle" aria-label="Show or hide the sidebar" aria-expanded="true">☰</button>
+
+      <h2 class="page-heading">Settings</h2>
+      <p class="shop-message" id="settings-message" role="status"></p>
+
+      <section class="panel settings-panel">
+        <h3>Appearance</h3>
+
+        <div class="setting-row">
+          <div class="setting-label">
+            <strong>Theme</strong>
+            <span>Light, dark, or match your device.</span>
+          </div>
+          <div class="seg" data-pref="theme" role="group" aria-label="Theme">
+            <button type="button" data-value="light">Light</button>
+            <button type="button" data-value="dark">Dark</button>
+            <button type="button" data-value="system">Match device</button>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-label">
+            <strong>Text size</strong>
+            <span>Makes everything on the site bigger or smaller.</span>
+          </div>
+          <div class="seg" data-pref="textSize" role="group" aria-label="Text size">
+            <button type="button" data-value="small">Small</button>
+            <button type="button" data-value="medium">Medium</button>
+            <button type="button" data-value="large">Large</button>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-label">
+            <strong>Accent color</strong>
+            <span>The color of buttons, links, and highlights.</span>
+          </div>
+          <div class="option-row" data-pref="accent" role="group" aria-label="Accent color">
+            <button type="button" class="option-dot" data-value="blue" style="background: #1f5fc4" title="Blue" aria-label="Blue"></button>
+            <button type="button" class="option-dot" data-value="green" style="background: #2a8a5f" title="Green" aria-label="Green"></button>
+            <button type="button" class="option-dot" data-value="purple" style="background: #7a57d1" title="Purple" aria-label="Purple"></button>
+            <button type="button" class="option-dot" data-value="orange" style="background: #d9701a" title="Orange" aria-label="Orange"></button>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-label">
+            <strong>Motion</strong>
+            <span>Turn off animations if they're distracting.</span>
+          </div>
+          <div class="seg" data-pref="motion" role="group" aria-label="Motion">
+            <button type="button" data-value="system">Match device</button>
+            <button type="button" data-value="reduce">Reduce motion</button>
+          </div>
+        </div>
+
+        <p class="note">Calendar settings, like the first day of the week and 12 or 24-hour time, are in the calendar itself. Open the calendar on the dashboard and click the gear.</p>
+      </section>
+
+      <section class="panel settings-panel">
+        <h3>Account</h3>
+
+        <div class="setting-row">
+          <div class="setting-label">
+            <strong>Display name</strong>
+            <span>Up to 24 characters. Please don't use a full real name.</span>
+          </div>
+          <div class="setting-controls">
+            <input type="text" id="display-name" class="setting-input" maxlength="24" aria-label="Display name">
+            <button type="button" class="buy" id="save-name">Save</button>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-label">
+            <strong>Account type</strong>
+          </div>
+          <span id="account-type"></span>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-label">
+            <strong>Sign out</strong>
+            <span>You can come back to this account from the login page.</span>
+          </div>
+          <button type="button" class="buy secondary" id="logout-here">Log out</button>
+        </div>
+      </section>
+
+      <section class="panel settings-panel">
+        <h3>Your data</h3>
+        <p class="note">Your progress is saved in this browser only. Clearing your browsing data erases it, so download a backup now and then.</p>
+
+        <div class="setting-row">
+          <div class="setting-label">
+            <strong>Download a backup</strong>
+            <span>Saves your gems, items, progress, and calendar as a file.</span>
+          </div>
+          <button type="button" class="buy secondary" id="export-button">Download backup</button>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-label">
+            <strong>Restore from a backup</strong>
+            <span>Replaces this account's progress with a backup file.</span>
+          </div>
+          <div class="setting-controls">
+            <button type="button" class="buy secondary" id="import-button">Choose backup file</button>
+            <input type="file" id="import-file" accept=".json,application/json" hidden>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-label">
+            <strong>Reset my progress</strong>
+            <span>Erases this account's gems, items, solved problems, and calendar events.</span>
+          </div>
+          <button type="button" class="buy secondary danger" id="reset-button">Reset everything</button>
+        </div>
+      </section>
+
+      <section class="panel settings-panel">
+        <h3>About</h3>
+        <p class="note">Cognitive is a free learning site. Nothing you do here is sent to a server. Your progress stays on this device.</p>
+      </section>
+    </main>
+
+  </div>
+<script src="settings.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

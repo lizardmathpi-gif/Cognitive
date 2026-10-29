@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cognitive</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    try {
+      if (localStorage.getItem("sidebarCollapsed") === "true") {
+        document.documentElement.classList.add("sidebar-collapsed");
+      }
+    } catch (error) {}
+  </script>
+  <script src="auth.js"></script>
+</head>
+<body>
+  <div class="layout">
+
+    <nav class="sidebar">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="11" fill="#2b3a52" />
+          <path d="M13 14 L24 36 L35 14" fill="none" stroke="#f4ead5" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.5 25 L24 12.5 L30.5 25" fill="none" stroke="#7fd1b0" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="24" cy="36.5" r="2.2" fill="#7fd1b0" />
+        </svg>
+        <span class="brand-name">Cognitive</span>
+      </a>
+      <a class="nav-link active" href="index.html">Dashboard</a>
+      <a class="nav-link" href="sources.html">Sources</a>
+      <a class="nav-link" href="papers.html">Papers</a>
+      <a class="nav-link" href="settings.html">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-dasharray="3.22 3.22" />
+          <path fill="currentColor" fill-rule="evenodd" d="M12 5.2 a6.8 6.8 0 1 0 0.01 0 Z M12 9.2 a2.8 2.8 0 1 1 -0.01 0 Z" />
+        </svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <main>
+      <button class="menu-toggle" aria-label="Show or hide the sidebar" aria-expanded="true">☰</button>
+
+      <section class="dashboard-top">
+
+        <div class="stats">
+          <div class="stat stat-problems">
+            <span class="stat-number" data-stat="problems">0</span>
+            <span class="stat-label">Problems solved correctly</span>
+          </div>
+
+          <div class="avatar-box">
+            <div class="avatar" role="img" aria-label="Your avatar"></div>
+            <a class="shop-button" href="shop.html">Shop</a>
+          </div>
+
+          <div class="stat stat-days">
+            <span class="stat-number" data-stat="streak">0</span>
+            <span class="stat-label">Day streak</span>
+          </div>
+
+          <div class="calendar" id="calendar" aria-label="Activity calendar"></div>
+
+          <div class="stat stat-points">
+            <span class="stat-number" data-points="total">0</span>
+            <span class="stat-label">Total points</span>
+          </div>
+        </div>
+
+      </section>
+
+      <h2 class="page-heading">Choose a subject</h2>
+
+      <div class="subject-grid">
+
+        <a class="subject" href="math.html">
+          <h2>Math</h2>
+          <p>Mathematics is the study of numbers, shapes, quantities, and patterns using logical reasoning and deductive proof.</p>
+        </a>
+        <a class="subject" href="language.html">
+          <h2>Language</h2>
+          <p>Language is a structured system of communication that uses sounds, words, and grammar rules to express thoughts, feelings, and ideas.</p>
+        </a>
+        <a class="subject" href="science.html">
+          <h2>Science</h2>
+          <p>Science is an organized process of learning about the natural world and a growing body of knowledge gained through observation and experimentation.</p>
+        </a>
+        <a class="subject" href="reading.html">
+          <h2>Reading</h2>
+          <p>Reading is a core school subject that teaches students how to communicate effectively.</p>
+        </a>
+        <a class="subject" href="history.html">
+          <h2>History</h2>
+          <p>History is the study, record, and interpretation of past human events.</p>
+        </a>
+
+      </div>
+    </main>
+
+  </div>
+<script src="store.js"></script>
+<script src="progress.js"></script>
+<script src="script.js"></script>
+<script src="calendar.js"></script>
+</body>
+</html>

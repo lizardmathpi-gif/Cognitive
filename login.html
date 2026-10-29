@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in | Cognitive</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="auth.js"></script>
+</head>
+<body class="login-page">
+
+  <section class="login-card">
+    <svg class="login-mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="11" fill="#2b3a52" />
+      <path d="M13 14 L24 36 L35 14" fill="none" stroke="#f4ead5" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M17.5 25 L24 12.5 L30.5 25" fill="none" stroke="#7fd1b0" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="24" cy="36.5" r="2.2" fill="#7fd1b0" />
+    </svg>
+
+    <h1>Cognitive</h1>
+    <p class="login-sub">Practice math, earn gems, and style your character.</p>
+
+    <button type="button" id="login-button" class="login-button">Log in</button>
+    <p class="note">For now, logging in creates a new account on this device.</p>
+
+    <section class="login-section" id="existing" hidden>
+      <h2>Continue as</h2>
+      <div class="existing-list" id="existing-list"></div>
+    </section>
+
+    <details class="login-section">
+      <summary>Admin</summary>
+      <div class="admin-row">
+        <input type="password" id="admin-pass" class="admin-input" placeholder="Admin passcode" aria-label="Admin passcode">
+        <button type="button" id="admin-button" class="login-button small">Sign in</button>
+      </div>
+      <p class="note" id="admin-message" role="status"></p>
+    </details>
+  </section>
+
+  <script src="login.js"></script>
+</body>
+</html>

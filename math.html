@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Math | Cognitive</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    try {
+      if (localStorage.getItem("sidebarCollapsed") === "true") {
+        document.documentElement.classList.add("sidebar-collapsed");
+      }
+    } catch (error) {}
+  </script>
+  <script src="auth.js"></script>
+</head>
+<body>
+  <div class="layout">
+
+    <nav class="sidebar">
+            <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="11" fill="#2b3a52" />
+          <path d="M13 14 L24 36 L35 14" fill="none" stroke="#f4ead5" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.5 25 L24 12.5 L30.5 25" fill="none" stroke="#7fd1b0" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="24" cy="36.5" r="2.2" fill="#7fd1b0" />
+        </svg>
+        <span class="brand-name">Cognitive</span>
+      </a>
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link" href="sources.html">Sources</a>
+      <a class="nav-link" href="papers.html">Papers</a>
+      <a class="nav-link" href="settings.html">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-dasharray="3.22 3.22" />
+          <path fill="currentColor" fill-rule="evenodd" d="M12 5.2 a6.8 6.8 0 1 0 0.01 0 Z M12 9.2 a2.8 2.8 0 1 1 -0.01 0 Z" />
+        </svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <main>
+      <button class="menu-toggle" aria-label="Show or hide the sidebar" aria-expanded="true">☰</button>
+
+      <h2 class="page-heading">Math</h2>
+
+      <input
+        type="search"
+        id="topic-search"
+        class="search"
+        placeholder="Search math topics"
+        aria-label="Search math topics">
+
+      <div class="category-grid">
+
+        <section class="category">
+          <h3>6th Grade Math</h3>
+          <ul>
+            <li>Ratios and Rates</li>
+            <li>Dividing Fractions and Decimals</li>
+            <li>Expressions and One-Step Equations</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>7th Grade Math</h3>
+          <ul>
+            <li>Proportional Relationships and Percents</li>
+            <li>Operations with Integers and Rational Numbers</li>
+            <li>Two-Step Equations and Inequalities</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>8th Grade Math</h3>
+          <ul>
+            <li>Linear Equations and Slope</li>
+            <li>Functions</li>
+            <li>Pythagorean Theorem</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>Math 1</h3>
+          <ul>
+            <li>Linear Equations and Inequalities</li>
+            <li>Systems of Linear Equations</li>
+            <li>Exponential Growth and Decay</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>Math 2</h3>
+          <ul>
+            <li>Quadratic Functions</li>
+            <li>Congruence and Similarity</li>
+            <li>Right Triangle Trigonometry</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>Math 3</h3>
+          <ul>
+            <li>Polynomial and Rational Functions</li>
+            <li>Exponential and Logarithmic Functions</li>
+            <li>Statistics and Probability</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>Precalculus</h3>
+          <ul>
+            <li>Trigonometry and the Unit Circle</li>
+            <li>Conic Sections</li>
+            <li>Sequences, Series, and Limits</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>High School Calculus</h3>
+          <ul>
+            <li>Limits</li>
+            <li>Derivatives</li>
+            <li>Integrals</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>PSAT</h3>
+          <ul>
+            <li>Linear Equations and Inequalities</li>
+            <li>Ratios, Rates, and Percents</li>
+            <li>Basic Geometry and Trigonometry</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>SAT</h3>
+          <ul>
+            <li>Systems of Linear Equations</li>
+            <li>Quadratics and Nonlinear Functions</li>
+            <li>Data Analysis and Statistics</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>PACT</h3>
+          <ul>
+            <li>Pre-Algebra and Number Sense</li>
+            <li>Elementary Algebra</li>
+            <li>Geometry and Measurement</li>
+          </ul>
+        </section>
+
+        <section class="category">
+          <h3>ACT</h3>
+          <ul>
+            <li>Pre-Algebra and Elementary Algebra</li>
+            <li>Intermediate Algebra and Coordinate Geometry</li>
+            <li>Plane Geometry and Trigonometry</li>
+          </ul>
+        </section>
+
+      </div>
+
+      <p id="no-results" hidden>No topics match your search.</p>
+    </main>
+
+  </div>
+   <script src="courses.js"></script>
+   <script src="script.js"></script>
+</body>
+</html>
